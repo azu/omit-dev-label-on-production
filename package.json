@@ -1,0 +1,16 @@
+{
+  "name": "omit-dev-label-on-production",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build:dev && npm run build:prod",
+    "build:dev": "esbuild --bundle index.js --outfile=output.dev.js",
+    "build:prod": "esbuild --drop-labels=DEV --bundle index.js --outfile=output.prod.js"
+  },
+  "author": "azu",
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "^0.18.13"
+  }
+}
